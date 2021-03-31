@@ -7,6 +7,8 @@ end
 
 ruby '2.5.3'
 
+gem 'jquery-rails'
+gem 'bootstrap', '~> 5.0.0.beta1'
 gem 'rails', '5.2.4.3'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'

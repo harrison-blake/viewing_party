@@ -1,14 +1,16 @@
-<h1>Welcome to Viewing Party</h1>
-<h3>An app to view movies with your friends!</h3>
-<% if !current_user %>
-  <%= form_with url: login_path, local: true do |f| %>
-    <%= f.label :email %>
-    <%= f.text_field :email %><br>
-    <%= f.label :password %>
-    <%= f.password_field :password %><br>
-    <%= f.submit "Sign In" %><br><br>
+<div class="container-fluid">
+  <h1>Welcome to Viewing Party</h1>
+  <h3>An app to view movies with your friends!</h3>
+  <% if !current_user %>
+    <%= form_with url: login_path, local: true do |f| %>
+      <%= f.label :email %>
+      <%= f.text_field :email %><br>
+      <%= f.label :password %>
+      <%= f.password_field :password %><br>
+      <%= f.submit "Sign In", class: "btn btn-primary" %><br><br>
+    <% end %>
+    <%= link_to 'New to Viewing Party? Register Here', '/registration', class: "btn btn-info" %>
+  <% else %>
+    <%= link_to "Dashboard", dashboard_index_path, class: "btn btn-primary" %>
   <% end %>
-  <%= link_to 'New to Viewing Party? Register Here', '/registration' %>
-<% else %>
-  <%= link_to "Dashboard", dashboard_index_path %>
-<% end %>
+</div>
